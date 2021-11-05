@@ -31,7 +31,7 @@ public class Consumer {
     // Confluent interceptors
     final Properties settings = new Properties();
     settings.put(ConsumerConfig.GROUP_ID_CONFIG, "java-consumer-prev");
-    settings.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:9092");
+    settings.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9093");
     settings.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
     settings.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
     settings.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);

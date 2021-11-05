@@ -30,12 +30,12 @@ public class Consumer {
     // Confluent interceptors, Schema Registry location
     final Properties settings = new Properties();
     settings.put(ConsumerConfig.GROUP_ID_CONFIG, "java-consumer-avro");
-    settings.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:9092");
+    settings.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9093");
     settings.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
     settings.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
     settings.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class);
     settings.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "true");
-    settings.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://schema-registry:8081");
+    settings.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
     settings.put(ConsumerConfig.INTERCEPTOR_CLASSES_CONFIG,
         List.of(MonitoringConsumerInterceptor.class));
 

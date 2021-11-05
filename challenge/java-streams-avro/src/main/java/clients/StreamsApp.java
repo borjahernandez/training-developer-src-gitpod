@@ -35,7 +35,7 @@ public class StreamsApp {
 
     final Properties settings = new Properties();
     settings.put(StreamsConfig.APPLICATION_ID_CONFIG, "streams-app-1");
-    settings.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:9092");
+    settings.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9093");
     settings.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG,
         Serdes.String().getClass().getName());
     // Disabling caching ensures we get a complete "changelog" from the
@@ -70,7 +70,7 @@ public class StreamsApp {
   private static Topology getTopology() {
     // When you want to override serdes explicitly/selectively
     final Map<String, String> serdeConfig = Collections.singletonMap("schema.registry.url",
-                                                                    "http://schema-registry:8081");
+                                                                    "http://localhost:8081");
     final Serde<PositionValue> positionValueSerde = new SpecificAvroSerde<>();
     positionValueSerde.configure(serdeConfig, false); 
     final Serde<PositionDistance> positionDistanceSerde = new SpecificAvroSerde<>();
