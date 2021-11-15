@@ -1,23 +1,20 @@
 FROM gitpod/workspace-full:latest
 
 USER root
-RUN touch /home/gitpod/hosts1 && cat <<EOF >/home/gitpod/hosts1 \
-       # Kubernetes-managed hosts file. \
-       # DEV host entries \
-       127.0.0.1	kafka \
-       127.0.0.1	zookeeper \
-       127.0.0.1	schema-registry \
-       127.0.0.1	connect \
-       127.0.0.1	ksqldb-server \
-       127.0.0.1	postgres \
-       127.0.0.1	localhost \
-       ::1	localhost ip6-localhost ip6-loopback \
-       fe00::0	ip6-localnet \
-       fe00::0	ip6-mcastprefix \
-       fe00::1	ip6-allnodes \
-       fe00::2	ip6-allrouters \
-       10.52.23.60	ws-194691e1-3d09-4f94-9187-6614b966fc91 \
-       EOF
+RUN touch /home/gitpod/hosts1
+RUN echo '127.0.0.1	kafka' >> /home/gitpod/hosts1
+RUN echo '127.0.0.1	zookeeper' >> /home/gitpod/hosts1
+RUN echo '127.0.0.1	schema-registry' >> /home/gitpod/hosts1
+RUN echo '127.0.0.1	connect' >> /home/gitpod/hosts1
+RUN echo '127.0.0.1	ksqldb-server' >> /home/gitpod/hosts1
+RUN echo '127.0.0.1	postgres' >> /home/gitpod/hosts1
+RUN echo '127.0.0.1	localhost' >> /home/gitpod/hosts1
+RUN echo '::1	localhost ip6-localhost ip6-loopback' >> /home/gitpod/hosts1
+RUN echo 'fe00::0	ip6-localnet' >> /home/gitpod/hosts1
+RUN echo 'fe00::0	ip6-mcastprefix' >> /home/gitpod/hosts1
+RUN echo 'fe00::1	ip6-allnodes' >> /home/gitpod/hosts1
+RUN echo 'fe00::2	ip6-allrouters' >> /home/gitpod/hosts1
+RUN echo '10.52.23.60	ws-194691e1-3d09-4f94-9187-6614b966fc91' >> /home/gitpod/hosts1
 
 USER gitpod
 # Install Confluent Platform 6.2.1
