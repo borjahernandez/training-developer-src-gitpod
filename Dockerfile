@@ -9,3 +9,6 @@ RUN wget --quiet -P /workspace/ http://packages.confluent.io/archive/6.2/conflue
 # Setup PATH env variable
 USER gitpod
 ENV PATH="/workspace/confluent-6.2.1/bin:$PATH"
+
+# Give back control
+USER root
