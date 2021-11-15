@@ -1,5 +1,7 @@
 FROM gitpod/workspace-full:latest
 
+USER gitpod
+
 # Install Confluent Platform 6.2.1
 RUN sudo wget --quiet -P /home/gitpod/ http://packages.confluent.io/archive/6.2/confluent-community-6.2.1.tar.gz \
         && sudo tar xzf /home/gitpod/confluent-community-6.2.1.tar.gz \
