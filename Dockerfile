@@ -2,7 +2,6 @@ FROM gitpod/workspace-full:latest
 
 USER root
 RUN cat >> /home/gitpod/hosts1 << EOF
-       text
        # Kubernetes-managed hosts file.
        # DEV host entries
        127.0.0.1	kafka
