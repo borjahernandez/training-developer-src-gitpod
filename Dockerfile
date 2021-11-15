@@ -4,7 +4,7 @@ FROM gitpod/workspace-full:latest
 USER root
 RUN wget --quiet -P /workspace/ http://packages.confluent.io/archive/6.2/confluent-community-6.2.1.tar.gz \
         && tar xzf /workspace/confluent-community-6.2.1.tar.gz \
-        && rm confluent-community-6.2.1.tar.gz
+        && rm /workspace/confluent-community-6.2.1.tar.gz
 
 # Setup PATH env variable
 USER gitpod
